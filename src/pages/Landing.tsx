@@ -1,4 +1,4 @@
 function Landing() {
-  return <div>Landing</div>;
+  return <div>Welcome to SUPER CRAFT</div>
 }
-export default Landing;
+export default Landing
