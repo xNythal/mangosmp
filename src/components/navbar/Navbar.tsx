@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { NavigationMenu } from "../ui/navigation-menu"
 import ThemeToggle from "./ThemeToggle"
 import { Button } from "../ui/button"
+import SocialLinks from "./SocialLinks"
 
 function Navbar() {
   return (
@@ -14,7 +15,10 @@ function Navbar() {
           <Button variant="outline">About</Button>
         </Link>
       </NavigationMenu>
-      <ThemeToggle />
+      <div className="flex items-center gap-2">
+        <SocialLinks />
+        <ThemeToggle />
+      </div>
     </div>
   )
 }
