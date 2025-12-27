@@ -1,4 +1,10 @@
+import Hero from "@/components/landing/Hero"
+
 function Landing() {
-  return <div>Welcome to SUPER CRAFT</div>
+  return (
+    <main>
+      <Hero />
+    </main>
+  )
 }
 export default Landing
