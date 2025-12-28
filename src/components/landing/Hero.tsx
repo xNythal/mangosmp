@@ -29,7 +29,7 @@ function Hero() {
   }
 
   return (
-    <div className="relative h-[calc(100vh-56px)] flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-[calc(100dvh-56px)] flex items-center justify-center overflow-hidden py-20">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-primary/10" />
 
