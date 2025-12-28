@@ -1,3 +1,4 @@
+import { Info } from "lucide-react"
 import { FaDiscord, FaFacebook, FaYoutube } from "react-icons/fa6"
 
 interface SocialLink {
@@ -9,6 +10,7 @@ interface SocialLink {
 interface NavLink {
   name: string
   to: string
+  icon: React.ReactNode
 }
 
 export const socialLinks: SocialLink[] = [
@@ -25,7 +27,7 @@ export const socialLinks: SocialLink[] = [
   {
     icon: <FaYoutube />,
     name: "Youtube",
-    url: "https://youtube.com",
+    url: "https://youtube.com/@supercraft.server",
   },
 ]
 
@@ -33,5 +35,6 @@ export const navLinks: NavLink[] = [
   {
     name: "About",
     to: "/about",
+    icon: <Info />,
   },
 ]

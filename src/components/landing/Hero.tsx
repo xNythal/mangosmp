@@ -68,7 +68,7 @@ function Hero() {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-row gap-4 justify-center">
           <Link to="/join">
             <Button size="lg" className="text-lg px-8">
               Join Now

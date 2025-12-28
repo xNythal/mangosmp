@@ -19,10 +19,10 @@ function Navbar() {
         <NavLink to="/">
           <img src="./logo.png" alt="Logo" className="h-10" />
         </NavLink>
-        {navLinks.map(({ name, to }) => (
+        {navLinks.map(({ name, to, icon }) => (
           <NavLink to={to}>
-            <Button variant="outline" className="hidden sm:block">
-              {name}
+            <Button variant="outline" className="hidden sm:flex">
+              {icon} {name}
             </Button>
           </NavLink>
         ))}
@@ -38,10 +38,10 @@ function Navbar() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-48">
-            {navLinks.map(({ name, to }) => (
+            {navLinks.map(({ name, to, icon }) => (
               <DropdownMenuItem asChild>
-                <NavLink to={to} className="w-full">
-                  {name}
+                <NavLink to={to}>
+                  {icon} {name}
                 </NavLink>
               </DropdownMenuItem>
             ))}
