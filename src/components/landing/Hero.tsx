@@ -37,24 +37,26 @@ function Hero() {
       <div className="absolute inset-0 bg-grid-pattern opacity-10" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto space-y-8">
+      <div className="relative z-10 text-center px-6 sm:px-8 md:px-4 max-w-4xl mx-auto space-y-8 w-full">
         {/* Main heading */}
         <div className="space-y-4">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight break-words">
             Welcome to{" "}
             <span className="bg-gradient-to-r from-red-950 to-red-900/60 bg-clip-text text-transparent">
               SUPER CRAFT
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
             Join the ultimate Minecraft experience with custom addons, epic
             fights, and an amazing community
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <div className="flex items-center gap-2 bg-secondary px-6 py-3 rounded-lg border">
-            <code className="text-lg font-mono">{serverIP}</code>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
+          <div className="flex items-center gap-2 bg-secondary px-4 sm:px-6 py-3 rounded-lg border max-w-full">
+            <code className="text-sm sm:text-lg font-mono truncate">
+              {serverIP}
+            </code>
             <Button
               variant="ghost"
               size="icon"
