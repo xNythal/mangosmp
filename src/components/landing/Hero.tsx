@@ -31,7 +31,7 @@ function Hero() {
   return (
     <div className="relative min-h-[calc(100dvh-56px)] flex items-center justify-center overflow-hidden py-20">
       {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-primary/10" />
+      <div className="absolute inset-0 bg-linear-to-br from-primary/20 via-background to-primary/10" />
 
       {/* Animated grid pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10" />
@@ -40,9 +40,9 @@ function Hero() {
       <div className="relative z-10 text-center px-6 sm:px-8 md:px-4 max-w-4xl mx-auto space-y-8 w-full">
         {/* Main heading */}
         <div className="space-y-4">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight break-words">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight wrap-break-words">
             Welcome to{" "}
-            <span className="bg-gradient-to-r from-red-950 to-red-900 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-red-950 to-red-900 bg-clip-text text-transparent">
               SUPER CRAFT
             </span>
           </h1>

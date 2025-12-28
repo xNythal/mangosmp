@@ -3,21 +3,51 @@ import { NavigationMenu } from "../ui/navigation-menu"
 import ThemeToggle from "./ThemeToggle"
 import { Button } from "../ui/button"
 import SocialLinks from "./SocialLinks"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu"
+import { Menu } from "lucide-react"
+import { navLinks } from "@/lib/data"
 
 function Navbar() {
   return (
     <div className="w-full flex justify-between items-center">
       <NavigationMenu className="flex items-center gap-4">
-        <NavLink to="/" className="cursor-default">
+        <NavLink to="/">
           <img src="./logo.png" alt="Logo" className="h-10" />
         </NavLink>
-        <NavLink to="/about">
-          <Button variant="outline">About</Button>
-        </NavLink>
+        {navLinks.map(({ name, to }) => (
+          <NavLink to={to}>
+            <Button variant="outline" className="hidden sm:block">
+              {name}
+            </Button>
+          </NavLink>
+        ))}
       </NavigationMenu>
       <div className="flex items-center gap-4">
         <SocialLinks />
         <ThemeToggle />
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" size="icon" className="sm:hidden">
+              <Menu className="h-[1.2rem] w-[1.2rem]" />
+              <span className="sr-only">Navigation Links</span>
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-48">
+            {navLinks.map(({ name, to }) => (
+              <DropdownMenuItem asChild>
+                <NavLink to={to} className="w-full">
+                  {name}
+                </NavLink>
+              </DropdownMenuItem>
+            ))}
+            {/* Add more nav links here */}
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </div>
   )

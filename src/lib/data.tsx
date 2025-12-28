@@ -6,6 +6,11 @@ interface SocialLink {
   url: string
 }
 
+interface NavLink {
+  name: string
+  to: string
+}
+
 export const socialLinks: SocialLink[] = [
   {
     icon: <FaDiscord />,
@@ -21,5 +26,12 @@ export const socialLinks: SocialLink[] = [
     icon: <FaYoutube />,
     name: "Youtube",
     url: "https://youtube.com",
+  },
+]
+
+export const navLinks: NavLink[] = [
+  {
+    name: "About",
+    to: "/about",
   },
 ]
