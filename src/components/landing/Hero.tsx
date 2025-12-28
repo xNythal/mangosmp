@@ -42,7 +42,7 @@ function Hero() {
         <div className="space-y-4">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight break-words">
             Welcome to{" "}
-            <span className="bg-gradient-to-r from-red-950 to-red-900/60 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-950 to-red-900 bg-clip-text text-transparent">
               SUPER CRAFT
             </span>
           </h1>
