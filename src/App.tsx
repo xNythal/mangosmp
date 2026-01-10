@@ -2,7 +2,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { About, HomeLayout, Landing, Error } from "./pages"
 import { socialLinks } from "./lib/data"
 
-const discordRedirect = <>{(window.location.href = socialLinks[0].url)}</>
+function DiscordRedirect() {
+  window.location.href = socialLinks[0].url
+  return null
+}
 
 const router = createBrowserRouter(
   [
@@ -15,7 +18,7 @@ const router = createBrowserRouter(
         { path: "about", element: <About /> },
       ],
     },
-    { path: "/discord", element: discordRedirect },
+    { path: "/discord", element: <DiscordRedirect /> },
   ],
   { basename: import.meta.env.VITE_BASENAME },
 )
