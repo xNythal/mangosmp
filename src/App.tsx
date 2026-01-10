@@ -13,9 +13,9 @@ const router = createBrowserRouter(
       children: [
         { index: true, element: <Landing /> },
         { path: "about", element: <About /> },
-        { path: "discord", element: discordRedirect },
       ],
     },
+    { path: "/discord", element: discordRedirect },
   ],
   { basename: import.meta.env.VITE_BASENAME },
 )
