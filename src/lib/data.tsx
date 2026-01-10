@@ -1,5 +1,5 @@
 import { Info } from "lucide-react"
-import { FaDiscord, FaFacebook, FaYoutube } from "react-icons/fa6"
+import { FaDiscord, FaYoutube } from "react-icons/fa6"
 
 interface SocialLink {
   icon: React.ReactNode
@@ -20,13 +20,8 @@ export const socialLinks: SocialLink[] = [
     url: "https://discord.gg/GSXsF3KFQ3",
   },
   {
-    icon: <FaFacebook />,
-    name: "Facebook",
-    url: "https://facebook.com",
-  },
-  {
     icon: <FaYoutube />,
-    name: "Youtube",
+    name: "YouTube",
     url: "https://youtube.com/@supercraft.server",
   },
 ]
