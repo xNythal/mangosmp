@@ -1,5 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { About, HomeLayout, Landing, Error } from "./pages"
+import { socialLinks } from "./lib/data"
+
+const discordRedirect = <>{(window.location.href = socialLinks[0].url)}</>
 
 const router = createBrowserRouter(
   [
@@ -10,6 +13,7 @@ const router = createBrowserRouter(
       children: [
         { index: true, element: <Landing /> },
         { path: "about", element: <About /> },
+        { path: "discord", element: discordRedirect },
       ],
     },
   ],
