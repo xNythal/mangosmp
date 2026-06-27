@@ -6,7 +6,7 @@ import { toast } from "react-toastify"
 import { Link } from "react-router-dom"
 
 function Hero() {
-  const serverIP = "supercraftplay.aternos.me:17341"
+  const serverIP = "join.supercraft.play.hosting"
   const [playerNum, setPlayerNum] = useState(0)
   const [pluginNum, setPluginNum] = useState(0)
   const [online, setOnline] = useState(false)
