@@ -33,7 +33,7 @@ export default function Hero() {
     fetchPlayerNum()
 
     // Refresh every 30 seconds
-    const interval = setInterval(fetchPlayerNum, 30000)
+    const interval = setInterval(fetchPlayerNum, 10000)
 
     return () => clearInterval(interval)
   }, [])
