@@ -15,7 +15,7 @@ export default function Hero() {
   async function fetchPlayerNum() {
     try {
       const res = await axios(
-        `https://api.mcstatus.io/v2/status/java/${serverIP}`,
+        `https://minecraft-serverhub.com/api/ping?host=${serverIP}`,
       )
 
       console.log(res.data)
