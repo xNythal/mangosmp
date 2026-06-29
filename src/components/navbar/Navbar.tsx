@@ -17,7 +17,7 @@ function Navbar() {
     <div className="w-full flex justify-between items-center">
       <NavigationMenu className="flex items-center gap-4">
         <NavLink to="/">
-          <img src="./logo.png" alt="Logo" className="h-10" />
+          <img src="favicon.png" alt="Logo" className="h-10" />
         </NavLink>
         {navLinks.map(({ name, to, icon }) => (
           <NavLink to={to}>
