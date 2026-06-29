@@ -96,7 +96,7 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-row gap-4 justify-center">
-          <a href="/discord" target="_blank" rel="noopener noreferrer">
+          <a href="discord" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
               className="text-lg px-8 bg-[#9D0F07] hover:bg-[#B3120A] text-white"
