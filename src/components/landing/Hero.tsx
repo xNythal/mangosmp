@@ -18,10 +18,8 @@ export default function Hero() {
         `https://minecraft-serverhub.com/api/ping?host=${serverIP}`,
       )
 
-      console.log(res.data)
-
       setPlayerNum(res.data.players?.online || 0)
-      setOnline(res.data.online || false)
+      setOnline(res.data.online)
     } catch (err) {
       console.error("Failed to fetch server status:", err)
       setPlayerNum(0)
