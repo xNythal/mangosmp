@@ -76,9 +76,21 @@ export default function Hero() {
               variant="ghost"
               size="icon"
               onClick={copyToClipboard}
-              className="h-8 w-8"
+              className="relative h-8 w-8"
             >
-              {copied ? <Check /> : <Copy />}
+              <Copy
+                className={`absolute h-4 w-4 transition-all duration-200 ${
+                  copied ? "scale-0 rotate-90" : "scale-100 rotate-0"
+                }`}
+              />
+
+              <Check
+                className={`absolute h-4 w-4 transition-all duration-200 ${
+                  copied ? "scale-100 rotate-0" : "scale-0 -rotate-90"
+                }`}
+              />
+
+              <span className="sr-only">Copy server IP</span>
             </Button>
           </div>
         </div>
@@ -87,7 +99,7 @@ export default function Hero() {
           <a href="/discord" target="_blank" rel="noopener noreferrer">
             <Button
               size="lg"
-              className="text-lg px-8 bg-[#9D0F07] hover:bg-[#B3120A] text-white hover:-translate-y-1"
+              className="text-lg px-8 bg-[#9D0F07] hover:bg-[#B3120A] text-white"
             >
               Join our community
             </Button>
