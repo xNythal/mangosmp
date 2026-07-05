@@ -1,5 +1,4 @@
-import { Info } from "lucide-react"
-import { FaDiscord, FaYoutube } from "react-icons/fa6"
+import { FaDiscord, FaYoutube, FaBookOpen } from "react-icons/fa6"
 
 interface SocialLink {
   icon: React.ReactNode
@@ -28,8 +27,8 @@ export const socialLinks: SocialLink[] = [
 
 export const navLinks: NavLink[] = [
   {
-    name: "About",
-    to: "/about",
-    icon: <Info />,
+    name: "Guide",
+    to: "/guide",
+    icon: <FaBookOpen />,
   },
 ]

@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import { About, HomeLayout, Landing, Error } from "./pages"
+import { Guide, HomeLayout, Landing, Error } from "./pages"
 import { socialLinks } from "./lib/data"
 
 function DiscordRedirect() {
@@ -15,7 +15,7 @@ const router = createBrowserRouter(
       errorElement: <Error />,
       children: [
         { index: true, element: <Landing /> },
-        { path: "about", element: <About /> },
+        { path: "guide", element: <Guide /> },
       ],
     },
     { path: "/discord", element: <DiscordRedirect /> },

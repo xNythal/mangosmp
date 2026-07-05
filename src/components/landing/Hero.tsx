@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import { toast } from "react-toastify"
 import { Link } from "react-router-dom"
+import { socialLinks } from "@/lib/data"
 
 export default function Hero() {
   const serverIP = "join.supercraft.play.hosting"
@@ -67,7 +68,7 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
-          <div className="flex items-center gap-2 bg-secondary px-4 sm:px-6 py-3 rounded-lg border max-w-full">
+          <div className="glow flex items-center gap-2 bg-secondary pl-4 pr-2 sm:pl-6 sm:pr-3 py-3 rounded-lg border max-w-full">
             <code className="text-sm sm:text-lg font-mono">{serverIP}</code>
 
             <Button
@@ -95,20 +96,25 @@ export default function Hero() {
 
         <div className="flex flex-row gap-4 justify-center">
           <a
-            href={`${import.meta.env.VITE_BASENAME}discord`}
+            href={socialLinks[0].url}
             target="_blank"
             rel="noopener noreferrer"
           >
             <Button
               size="lg"
-              className="text-lg px-8 bg-[#9D0F07] hover:bg-[#B3120A] text-white"
+              className="text-lg px-8 bg-[#9D0F07] hover:bg-[#9D0F07] text-white glow"
+              style={{ "--glow-alpha": 0.2 } as React.CSSProperties}
             >
               Join our community
             </Button>
           </a>
 
-          <Link to="/about">
-            <Button size="lg" variant="outline" className="text-lg px-8">
+          <Link to="/guide">
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-lg px-8 hover:bg-background dark:hover:bg-input/30 glow"
+            >
               Learn more
             </Button>
           </Link>
