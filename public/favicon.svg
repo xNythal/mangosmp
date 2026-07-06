@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1024mm"
+   height="1024mm"
+   viewBox="0 0 1024 1024"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   sodipodi:docname="SuperCraft Logo.svg"
+   inkscape:export-filename="mango.png"
+   inkscape:export-xdpi="25.4"
+   inkscape:export-ydpi="25.4"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.17215734"
+     inkscape:cx="548.91648"
+     inkscape:cy="1902.3296"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:export-bgcolor="#ffeeaaff">
+    <inkscape:grid
+       id="grid29"
+       units="mm"
+       originx="0"
+       originy="0"
+       spacingx="0.99999998"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient61"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#ffdd55;stop-opacity:1"
+         offset="0"
+         id="stop61" />
+      <stop
+         style="stop-color:#ff7f2a;stop-opacity:1"
+         offset="0.99989998"
+         id="stop63" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient61"
+       id="linearGradient62"
+       x1="180.00002"
+       y1="149.99991"
+       x2="500.00012"
+       y2="1009.9996"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="rotate(35.351831,531.46828,549.06981)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path46"
+       style="fill:url(#linearGradient62);fill-opacity:1;stroke:#1a1a1a;stroke-width:50;stroke-dasharray:none"
+       d="m 736.70252,205.37526 a 320,430 35.351831 0 0 -509.79293,165.56366 320,430 35.351831 0 0 12.20091,535.86445 320,430 35.351831 0 0 509.79255,-165.56309 320,430 35.351831 0 0 89.26971,-199.4133 121.87062,130 35.351831 0 1 -53.58623,-20.48703 121.87062,130 35.351831 0 1 -24.1821,-176.54353 121.87062,130 35.351831 0 1 55.39022,-45.6642 320,430 35.351831 0 0 -79.09213,-93.75696 z" />
+    <ellipse
+       style="fill:#008000;stroke:#1a1a1a;stroke-width:50.2244;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:0;stroke-dasharray:none"
+       id="path63"
+       transform="matrix(0.64851853,0.76119887,-0.66800113,0.74416025,0,0)"
+       cx="669.54303"
+       cy="-474.47165"
+       rx="48.045895"
+       ry="101.5366" />
+  </g>
+</svg>
