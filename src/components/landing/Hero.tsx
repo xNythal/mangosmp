@@ -56,7 +56,7 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight wrap-break-word">
             Welcome to{" "}
             <span className="bg-linear-to-r from-[#5C0704] via-[#9D0F07] to-[#E21A0F] bg-clip-text text-transparent">
-              SuperCraft
+              Mango SMP
             </span>
           </h1>
 
