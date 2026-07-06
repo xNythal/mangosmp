@@ -5,11 +5,5 @@ If it caught your interest, feel free to join the community and check it out.
 
 ## Color Palette
 
-Base: `#9D0F07`  
-Hover: `#B3120A`
-
-Gradient:
-
-- From: `#5C0704`
-- Via: `#9D0F07`
-- To: `#E21A0F`
+Primary: `#FF7F2A`
+Secondary: `#FFDD55`

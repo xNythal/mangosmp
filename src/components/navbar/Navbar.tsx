@@ -17,10 +17,10 @@ function Navbar() {
     <div className="w-full flex justify-between items-center">
       <NavigationMenu className="flex items-center gap-4">
         <NavLink to="/">
-          <img src="favicon.png" alt="Logo" className="h-10" />
+          <img src="favicon.svg" alt="Logo" className="h-10" />
         </NavLink>
         {navLinks.map(({ name, to, icon }) => (
-          <NavLink to={to}>
+          <NavLink to={to} key={name}>
             <Button variant="outline" className="hidden sm:flex">
               {icon} {name}
             </Button>

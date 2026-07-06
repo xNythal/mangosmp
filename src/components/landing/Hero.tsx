@@ -7,34 +7,41 @@ import { Link } from "react-router-dom"
 import { socialLinks } from "@/lib/data"
 
 export default function Hero() {
-  const serverIP = "join.supercraft.play.hosting"
+  const serverIP = "join.mango.play.hosting"
 
   const [playerNum, setPlayerNum] = useState(0)
   const [online, setOnline] = useState(false)
   const [copied, setCopied] = useState(false)
 
-  async function fetchPlayerNum() {
-    try {
-      const res = await axios(
-        `https://minecraft-serverhub.com/api/ping?host=${serverIP}`,
-      )
-
-      setPlayerNum(res.data.players?.online || 0)
-      setOnline(res.data.online)
-    } catch (err) {
-      console.error("Failed to fetch server status:", err)
-      setPlayerNum(0)
-      setOnline(false)
-    }
-  }
-
   useEffect(() => {
-    fetchPlayerNum()
+    let timeout: ReturnType<typeof setTimeout>
 
-    // Refresh every 30 seconds
-    const interval = setInterval(fetchPlayerNum, 10000)
+    const scheduleFetch = async () => {
+      try {
+        const res = await axios(
+          `https://api.mcstatus.io/v2/status/java/${serverIP}`,
+        )
 
-    return () => clearInterval(interval)
+        const data = res.data
+
+        setPlayerNum(data.players?.online || 0)
+        setOnline(data.online)
+
+        const next =
+          (data.expires_at || Math.floor(Date.now() / 1000) + 30) * 1000
+
+        const delay = Math.max(next - Date.now(), 5000)
+
+        timeout = setTimeout(scheduleFetch, delay)
+      } catch (err) {
+        console.error(err)
+        timeout = setTimeout(scheduleFetch, 30000)
+      }
+    }
+
+    scheduleFetch()
+
+    return () => clearTimeout(timeout)
   }, [])
 
   const copyToClipboard = () => {
@@ -47,7 +54,7 @@ export default function Hero() {
 
   return (
     <div className="relative min-h-[calc(100dvh-56px)] flex items-center justify-center overflow-hidden py-20">
-      <div className="absolute inset-0 bg-linear-to-br from-[#9D0F07]/15 via-background to-[#E21A0F]/10" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#FF7F2A]/10 via-background to-[#FF7F2A]/10" />
 
       <div className="absolute inset-0 bg-grid-pattern opacity-10" />
 
@@ -55,7 +62,7 @@ export default function Hero() {
         <div className="space-y-4">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight wrap-break-word">
             Welcome to{" "}
-            <span className="bg-linear-to-r from-[#5C0704] via-[#9D0F07] to-[#E21A0F] bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-[#FFDD55] to-[#FF7F2A] bg-clip-text text-transparent">
               Mango SMP
             </span>
           </h1>
@@ -102,8 +109,8 @@ export default function Hero() {
           >
             <Button
               size="lg"
-              className="text-lg px-8 bg-[#9D0F07] hover:bg-[#9D0F07] text-white glow"
-              style={{ "--glow-alpha": 0.2 } as React.CSSProperties}
+              className="text-lg px-8 bg-[#FF7F2A] hover:bg-[#FF7F2A] text-white glow"
+              style={{ "--glow-alpha": 0.3 } as React.CSSProperties}
             >
               Join our community
             </Button>
