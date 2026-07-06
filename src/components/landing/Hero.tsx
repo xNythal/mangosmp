@@ -14,34 +14,41 @@ export default function Hero() {
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
-    let timeout: ReturnType<typeof setTimeout>
+    let timeout: ReturnType<typeof setTimeout> | null = null
+    let cancelled = false
 
-    const scheduleFetch = async () => {
+    const fetchStatus = async () => {
       try {
-        const res = await axios(
+        const { data } = await axios.get(
           `https://api.mcstatus.io/v2/status/java/${serverIP}`,
         )
 
-        const data = res.data
+        if (cancelled) return
 
-        setPlayerNum(data.players?.online || 0)
-        setOnline(data.online)
+        setPlayerNum(data.players?.online ?? 0)
+        setOnline(data.players?.online > 0)
 
-        const next =
-          (data.expires_at || Math.floor(Date.now() / 1000) + 30) * 1000
+        const delay = Math.max(
+          (data.expires_at ?? Date.now() + 30_000) - Date.now(),
+          5_000,
+        )
 
-        const delay = Math.max(next - Date.now(), 5000)
-
-        timeout = setTimeout(scheduleFetch, delay)
+        timeout = setTimeout(fetchStatus, delay)
       } catch (err) {
         console.error(err)
-        timeout = setTimeout(scheduleFetch, 30000)
+
+        if (!cancelled) {
+          timeout = setTimeout(fetchStatus, 30_000)
+        }
       }
     }
 
-    scheduleFetch()
+    fetchStatus()
 
-    return () => clearTimeout(timeout)
+    return () => {
+      cancelled = true
+      if (timeout) clearTimeout(timeout)
+    }
   }, [])
 
   const copyToClipboard = () => {
