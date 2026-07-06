@@ -90,7 +90,7 @@ export default function Hero() {
                 left: `${particle.left}%`,
                 animationDuration: `${particle.duration}s`,
                 animationDelay: `${particle.delay}s`,
-                opacity: particle.opacity,
+                "--opacity": particle.opacity,
                 "--drift": `${particle.drift}px`,
               } as React.CSSProperties
             }
@@ -159,8 +159,8 @@ export default function Hero() {
           <Link to="/guide">
             <Button
               size="lg"
-              variant="outline"
-              className="text-lg px-8 dark:hover:bg-input/30 glow"
+              variant="ghost"
+              className="border border-input bg-input/30 text-lg px-8 glow"
             >
               Learn more
             </Button>

@@ -174,22 +174,35 @@
 
     will-change: transform, opacity;
   }
-
   @keyframes mangoFloat {
+    0% {
+      transform: translate3d(0, -20px, 0);
+      opacity: 0;
+    }
+
+    10% {
+      opacity: var(--opacity);
+    }
+
     20% {
       transform: translate3d(calc(var(--drift) * 0.5), 20vh, 0);
     }
+
     40% {
       transform: translate3d(calc(var(--drift) * -0.6), 40vh, 0);
     }
+
     60% {
       transform: translate3d(calc(var(--drift) * 0.7), 65vh, 0);
     }
+
     80% {
       transform: translate3d(calc(var(--drift) * -0.4), 85vh, 0);
     }
+
     100% {
       transform: translate3d(0, 110vh, 0);
+      opacity: 0;
     }
   }
 }
