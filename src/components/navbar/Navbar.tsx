@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 import { NavigationMenu } from "../ui/navigation-menu"
-import ThemeToggle from "./ThemeToggle"
+
 import { Button } from "../ui/button"
 import SocialLinks from "./SocialLinks"
 import {
@@ -29,7 +29,6 @@ function Navbar() {
       </NavigationMenu>
       <div className="flex items-center gap-4">
         <SocialLinks />
-        <ThemeToggle />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="icon" className="sm:hidden">

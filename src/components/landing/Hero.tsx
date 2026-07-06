@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Copy, Users, Check, Circle } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import axios from "axios"
 import { toast } from "react-toastify"
 import { Link } from "react-router-dom"
@@ -59,11 +59,44 @@ export default function Hero() {
     setTimeout(() => setCopied(false), 2000)
   }
 
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 22 }, () => ({
+        size: 2 + Math.random() * 4,
+        left: Math.random() * 100,
+        duration: 12 + Math.random() * 12,
+        delay: Math.random() * 15,
+        opacity: 0.08 + Math.random() * 0.15,
+        drift: Math.random() * 60 - 30,
+      })),
+    [],
+  )
+
   return (
     <div className="relative min-h-[calc(100dvh-56px)] flex items-center justify-center overflow-hidden py-20">
       <div className="absolute inset-0 bg-linear-to-br from-[#FF7F2A]/10 via-background to-[#FF7F2A]/10" />
 
       <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {particles.map((particle, i) => (
+          <span
+            key={i}
+            className="mango-particle"
+            style={
+              {
+                width: particle.size,
+                height: particle.size,
+                left: `${particle.left}%`,
+                animationDuration: `${particle.duration}s`,
+                animationDelay: `${particle.delay}s`,
+                opacity: particle.opacity,
+                "--drift": `${particle.drift}px`,
+              } as React.CSSProperties
+            }
+          />
+        ))}
+      </div>
 
       <div className="relative z-10 text-center px-6 sm:px-8 md:px-4 max-w-4xl mx-auto space-y-8 w-full">
         <div className="space-y-4">
@@ -127,7 +160,7 @@ export default function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 hover:bg-background dark:hover:bg-input/30 glow"
+              className="text-lg px-8 dark:hover:bg-input/30 glow"
             >
               Learn more
             </Button>
@@ -160,15 +193,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      <style>{`
-        .bg-grid-pattern {
-          background-image:
-            linear-gradient(to right, currentColor 1px, transparent 1px),
-            linear-gradient(to bottom, currentColor 1px, transparent 1px);
-          background-size: 40px 40px;
-        }
-      `}</style>
     </div>
   )
 }

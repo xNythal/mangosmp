@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -44,7 +42,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-:root {
+/* :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.25);
@@ -77,9 +75,9 @@
   --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
   --sidebar-border: oklch(0.923 0.003 48.717);
   --sidebar-ring: oklch(0.709 0.01 56.259);
-}
+} */
 
-.dark {
+:root {
   --background: oklch(0.147 0.004 49.25);
   --foreground: oklch(0.985 0.001 106.423);
   --card: oklch(0.216 0.006 56.043);
@@ -111,6 +109,7 @@
   --sidebar-accent-foreground: oklch(0.985 0.001 106.423);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.553 0.013 58.071);
+  --radius: 0.625rem;
 }
 
 @layer base {
@@ -146,5 +145,51 @@
 
     opacity: var(--glow-strength, 0);
     pointer-events: none;
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, currentColor 1px, transparent 1px),
+      linear-gradient(to bottom, currentColor 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .mango-particle {
+    position: absolute;
+    top: -20px;
+    border-radius: 9999px;
+
+    background: radial-gradient(
+      circle at 30% 30%,
+      #ffdd55,
+      #ff7f2a 70%,
+      transparent 100%
+    );
+
+    filter: blur(0.5px);
+
+    animation-name: mangoFloat;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    will-change: transform, opacity;
+  }
+
+  @keyframes mangoFloat {
+    20% {
+      transform: translate3d(calc(var(--drift) * 0.5), 20vh, 0);
+    }
+    40% {
+      transform: translate3d(calc(var(--drift) * -0.6), 40vh, 0);
+    }
+    60% {
+      transform: translate3d(calc(var(--drift) * 0.7), 65vh, 0);
+    }
+    80% {
+      transform: translate3d(calc(var(--drift) * -0.4), 85vh, 0);
+    }
+    100% {
+      transform: translate3d(0, 110vh, 0);
+    }
   }
 }
